@@ -6,8 +6,23 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Biblioteca Paulo Freire - Consulta de Acervo Catalogado</title>
 	</head>
-
 	<body>
+		<header>
+			<h1>Biblioteca Paulo Freire - Consulta de Acervo Catalogado</h1>
+		</header>
 
+		<main>
+			<ul>
+				<% livros.forEach(function(livro) { %>
+
+					<li><%= livro["sobrenome"].trim().toUpperCase() %>, <%= livro["nome"].trim() %>. <strong><%= livro["título"] %></strong>. <%= livro["edição/volume"] %>. <%= livro["país"] %>: <%= livro["editora"] %>, <%= livro["anoDaEdição"] %>.</li>
+
+				<% }); %>
+			</ul>
+		</main>
+
+		<footer>
+			<span>&copy; 2018 - Instituto Social Acadêmicos Iluminarte</span>rmr
+		</footer>
 	</body>
 </html>
