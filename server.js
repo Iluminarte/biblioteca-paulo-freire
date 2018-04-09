@@ -1,6 +1,5 @@
 const express = require('express');
 const request = require('request');
-const url = require('url');
 const site = express();
 const livrosJSON = require('./livros.js').all;
 const port = process.env.PORT || 8080
