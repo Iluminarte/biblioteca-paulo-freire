@@ -4,4 +4,4 @@ exports.all = gsjson({
 	spreadsheetId: process.env.SPREADSHEET_ID
 })
 
-.then(result => result)
+.then(result => result);
