@@ -4,18 +4,16 @@
   "description": "Biblioteca Paulo Freire - Consulta de Acervo Catalogado.",
   "main": "server.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js server.js",
-    "css-lint": "node_modules/stylint/bin/stylint stylus --config .stylintrc",
-    "css-compile": "rm -rf public/css && mkdir -p public/css && node_modules/stylus/bin/stylus --sourcemap --compress stylus --out public/css --use ./node_modules/nib/lib/nib",
+    "start": "node_modules/nodemon/bin/nodemon.js server.js",
+    "css-lint": "node_modules/stylint/bin/stylint src/stylus --config .stylintrc",
+    "css-compile": "rm -rf public/css && mkdir -p public/css && node_modules/stylus/bin/stylus --sourcemap --compress src/stylus --out public/css --use ./node_modules/nib/lib/nib",
+    "css-watch": "rm -rf public/css && mkdir -p public/css && node_modules/stylus/bin/stylus --sourcemap --compress src/stylus --out public/css --use ./node_modules/nib/lib/nib --watch",
     "css": "npm run css-lint && npm run css-compile"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iluminarte/biblioteca-paulo-freire.git"
   },
-  "keywords": [
-    "keyword"
-  ],
   "author": "marcker <marckfree@gmail.com> (https://github.com/marcker)",
   "license": "MIT",
   "bugs": {
@@ -26,8 +24,10 @@
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "google-spreadsheet-to-json": "^1.0.0",
+    "modern-normalize": "^0.4.0",
     "nib": "^1.1.2",
     "nodemon": "^1.17.3",
+    "sort-by": "^1.2.0",
     "stylint": "^1.5.9",
     "stylus": "^0.54.5"
   },

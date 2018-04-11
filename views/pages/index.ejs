@@ -4,25 +4,51 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" href="css/main.css">
+
 		<title>Biblioteca Paulo Freire - Consulta de Acervo Catalogado</title>
 	</head>
 	<body>
 		<header>
-			<h1>Biblioteca Paulo Freire - Consulta de Acervo Catalogado</h1>
+			<div class="wrapper-content">
+				<a href="#">
+					<div class="logo">
+						<img width="300" height="80" src="img/logo.svg" alt="Logotipo: Biblioteca Paulo Freire">
+					</div>
+				</a>
+
+				<div class="quotation">
+					<p>
+						<q cite="Paulo Freire">Lavar as mãos em face da opressão é reforçar o poder do opressor, é optar por ele.</q>
+					</p>
+				</div>
+			</div>
 		</header>
 
 		<main>
-			<ul>
-				<% livros.forEach(function(livro) { %>
+			<div class="wrapper-content">
+				<div class="header">
+					<h1>Acervo consolidado</h1>
+				</div>
 
-					<li><%= livro["sobrenome"].trim().toUpperCase() %>, <%= livro["nome"].trim() %>. <strong><%= livro["título"] %></strong>. <%= livro["edição/volume"] %>. <%= livro["país"] %>: <%= livro["editora"] %>, <%= livro["anoDaEdição"] %>.</li>
+				<div class="lista">
+					<ul>
+						<% livros.forEach(function(livro) { %>
 
-				<% }); %>
-			</ul>
+							<li><%= livro["sobrenome"].trim().toUpperCase() %>, <%= livro["nome"].trim() %>. <strong><%= livro["título"] %></strong>. <%= livro["edição/volume"] %>. <%= livro["país"] %>: <%= livro["editora"] %>, <%= livro["anoDaEdição"] %>.</li>
+
+						<% }); %>
+					</ul>
+				</div>
+			</div>
 		</main>
 
 		<footer>
-			<span>&copy; 2018 - Instituto Social Acadêmicos Iluminarte</span>
+			<div class="wrapper-content">
+				<span>&copy; 2018 - Instituto Social Acadêmicos Iluminarte</span>
+			</div>
 		</footer>
 	</body>
 </html>

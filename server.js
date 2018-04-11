@@ -1,5 +1,6 @@
 const express = require('express');
 const request = require('request');
+const sortBy = require('sort-by');
 const site = express();
 const livrosJSON = require('./livros.js').all;
 const port = process.env.PORT || 8080
@@ -8,7 +9,9 @@ site.use(express.static('public'));
 site.set('view engine', 'ejs');
 
 site.get('/api/livros/acervo', (req, res) => {
-	livrosJSON.then(result => res.json(result));
+	livrosJSON.then(result => res.json(
+		result.sort(sortBy('sobrenome', 'anoDaEdição'))
+	));
 });
 
 site.get('/', (req, res) => {
